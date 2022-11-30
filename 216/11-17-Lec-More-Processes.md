@@ -64,8 +64,8 @@ int execl(const char *filename, const char *arg0, ..., NULL);
 Each `exec*` function has the name `exec` followed by a combination of `l`, `v`, `p`, `e`
 
 - `l`: Use an argument **l**ist, terminated by `NULL`
-- `v`: Use an argument array (**v**ector)
-- `p`: Search the **P**ATH list of directories to find the program to execute
+- `v`: Use an argument array (**v**ector) (instead of a **l**ist)
+- `p`: Search the **P**ATH list of directories to find the program to execute (otherwise, need absolute path)
 - `e`: Use the specified **e**nvironment
 
 If the prototype has an argument called `filename`, you need to specify the absolute path of the executable
