@@ -2,13 +2,14 @@
 
 ## Problem 1: Short answers
 
-a. **todo**
+a. Statically linked is faster because the library is included with the executable.
+   Dynamically linked: multiple libraries can share it. Slower to start up.
 b. 32-bit floats have 1 sign bit, 8 exponent bits, and 23 significand bits
    The float is `sign bit * 2^(exponent - 127) * 1.significand`
 c. Base conversion
   i. 41
   ii. 10011010
-  iii. 219
+  iii. 11011011 -> 00100100 + 1 -> 00100101 -> -37
   iv. `16 * 10 + 11 = 171`
   v. 1010 1011 1100 1101
   vi. `174 = 16 * 10 + 14 = AE_16`
@@ -16,7 +17,7 @@ d. `<` makes it take input from the given file, `>` redirects output to the give
 e. `int* const a` means that the variable `a` cannot be modified, but the `int` that
    it's pointing to can. `const int *a` means that the variable `a` can be modified
    inside the function, but the `int` it's pointing to cannot be.
-f. For threads: `pthread_join(tid, &ret);` for threads, `wait(&status);` for processes
+f. For threads: `pthread_join(tid, &ret);` for threads, `wait_pid(child_pid, &status, 0);` for processes
 
 ## Problem 2
 
