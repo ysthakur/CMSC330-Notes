@@ -23,4 +23,5 @@ let f x = x + 1;; (* Define function to increment int *)
 (a:int + b:int):int
 (a:float +. b:float):float
 a:string ^ b:string (* Concatenate strings *)
+(let var = e1:t1 in e2:t2): t2
 ```
