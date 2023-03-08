@@ -26,7 +26,7 @@ Deterministic vs non-determinism:
 - **DFA**s are deterministic finite automata
   - Easy to check acceptance
   - Each of its transitions is uniquely determined by its source state and input symbol
-  - Reading an input symbol is required for each state transition
+  - Cannot do ε transitions, i.e. reading an input symbol is required for each state transition
 - All DFAs are NFAs
 
 ## Regex
@@ -62,4 +62,36 @@ For a finite state machine, need 5 things:
 
 ## Converting NFA to DFA
 
+Need to combine states to represent possible NFA states.
+
+Subset algorithm
+
+- Requires two functions:
+  - ε-closure: which states can I get to using only ε-transitions
+    - Can always reach self
+  - Move: which states can I get to using only one symbol transition
+    - Could be none
+
+Pseudocode:
+
+```
+NFA = (a, states, start,finals,transitions)
+DFA = (a, states, start,finals,transitions)
+visited = []
+let DFA.start = e-closure(start), add to DFA.states 
+while visited != DFA.states
+  add an unvisited state, s, to visited
+  for each char in a
+    E = move(s)
+    e = e-closure(E)
+    if e not in DFA.states
+      add e to DFA.states
+    add (s,char,e) DFA.transitions
+DFA.final = {r | s \in r and s \in NFA.final} 
+```
+
 ## Converting DFA to regex
+
+Idea: Remove states and replace with regex
+- Each state has 3 parts: incoming, self, outgoing
+- Regex added in that order
