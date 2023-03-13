@@ -2,13 +2,13 @@
 
 1. Basic stuff
     1. True/false
-        a. False
-        b. True
-        c. True
-        d. Emits a warning
-        e. False
-        f. True
-        g. False
+        1. False
+        2. True
+        3. True
+        4. Emits a warning
+        5. False
+        6. True
+        7. False
     2. Code: `fun y -> x + y + 10`, Environment: `x = 5`
 2. Regex
     1. `[A-Za-z]{8,10}`
