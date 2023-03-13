@@ -18,8 +18,8 @@
     1. ERROR
     2. `nil\n3`
     3. ERROR
-    4. `[2, 4, 6, 8]`
-    5. `True\nTrue`
+    4. ~~`[2, 4, 6, 8]`~~ `[2, 4, 6, 0, 8]` because only **false and nil** are falsy
+    5. `true\nfalse` (`equal?` is identity comparison)
     6. `[5, hi, true]`
  4. Ruby programming
     1. `addEdge`
@@ -27,8 +27,8 @@
         def addEdge(s)
           if s ~= /^start: ([A-Za-z]-[0-9]+) end: ([A-Za-z]-[0-9]+)$/
             if !@g.key? $1 then @g[$1] = [] end
-            if !@g[s].contains? $2 then
-              @g[s].append($2)
+            if !@g[s].include? $2 then
+              @g[s].push($2)
             end
           end
         end
@@ -37,7 +37,7 @@
         ```ruby
         def inDegree(node)
           n = 0
-          @g.each { |k, v| if v = node then n += 1 end }
+          @g.each { |k, v| if v.include? node then n += 1 end }
           n
         end
         ```
@@ -61,7 +61,7 @@
     1. ERROR
     2. 6
     3. `[1, 1, 2, 3]`
-    4. 9
+    4. ~~9~~ ERROR, because the arguments can't be passed as a tuple
     5. `(-4, 1)`
     6. 3
 7. OCaml Programming
