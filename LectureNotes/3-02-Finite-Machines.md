@@ -74,7 +74,7 @@ Subset algorithm
 
 Pseudocode:
 
-```
+```pseudocode
 NFA = (a, states, start,finals,transitions)
 DFA = (a, states, start,finals,transitions)
 visited = []
@@ -93,5 +93,6 @@ DFA.final = {r | s \in r and s \in NFA.final}
 ## Converting DFA to regex
 
 Idea: Remove states and replace with regex
+
 - Each state has 3 parts: incoming, self, outgoing
 - Regex added in that order
