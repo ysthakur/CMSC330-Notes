@@ -12,3 +12,10 @@
   - Non-terminals - groupings of terminals and nonterminals
   - Production - A definition of a non-terminal
   - Starting place
+
+## Parsing
+
+- Make lexer to generate tokens
+- After lexer makes tokens, use parser to check if grammatically correct
+  - Generates AST
+- After parser, need evaluator to go from AST to value
